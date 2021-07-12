@@ -1,5 +1,7 @@
 import React from 'react';
 
+// to create another item we had to save it in another state component
+
 class TodoForm extends React.Component{
     constructor() {
         super();
@@ -8,6 +10,7 @@ class TodoForm extends React.Component{
         }
     }
 
+    // handles change to type in the text box
     updateChange =(e) => {
         this.setState({
             ...this.state,
@@ -15,6 +18,7 @@ class TodoForm extends React.Component{
         })
     }
     
+    // submit function, hands the information from newTask to handleAddEvent where it creates an new item, and then clears textbox
     submitTask = e => {
         e.preventDefault();
         this.props.handleAddEvent(this.state.newTask)
@@ -28,7 +32,6 @@ class TodoForm extends React.Component{
         return(
             <div>
                 <form onSubmit={this.submitTask}>
-                    
                     <input value={this.state.newTask} onChange={this.updateChange} type="text" name="task"></input>
                     <button >Add Item</button>
                 </form>
