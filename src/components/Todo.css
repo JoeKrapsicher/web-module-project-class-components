@@ -1,0 +1,16 @@
+.header {
+    color: green;
+}
+
+App {
+    display: none;
+}
+
+.item{
+    color: blue;
+}
+
+.item-completed{
+    color: red;
+    text-decoration: line-through; 
+}
